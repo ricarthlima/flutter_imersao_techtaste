@@ -1,0 +1,25 @@
+{
+    "restaurants": [
+        {
+            "id": "06ad1df6-ddbc-47d7-92f5-bd51ab481a51",
+            "imagePath": "restaurants/monstro-burguer.jpg",
+            "name": "Monstro Burguer",
+            "description": "Hambúrgueres para quem curte a madrugada.",
+            "stars": 4.3,
+            "distance": 2,
+            "categories": [
+                "hambúrguer",
+                "lanche"
+            ],
+            "dishes": [
+                {
+                    "id": "bc4d97ed-e1bf-4062-b21e-8c76d32b116e",
+                    "imagePath": "dishes/monstro-burguer/xtudao.jpg",
+                    "name": "X-Tudão",
+                    "description": "Cuidado! Tudo que você puder imaginar tem nesse hambúrguer!",
+                    "price": 35
+                }
+            ]
+        }
+    ]
+}
