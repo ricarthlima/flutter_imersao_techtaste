@@ -8,16 +8,237 @@
             "stars": 4.3,
             "distance": 2,
             "categories": [
-                "hambúrguer",
-                "lanche"
+                "Principais",
+                "Petiscos"
             ],
             "dishes": [
                 {
-                    "id": "bc4d97ed-e1bf-4062-b21e-8c76d32b116e",
+                    "id": "1",
                     "imagePath": "dishes/monstro-burguer/xtudao.jpg",
                     "name": "X-Tudão",
-                    "description": "Cuidado! Tudo que você puder imaginar tem nesse hambúrguer!",
+                    "description": "Tudo que você puder imaginar tem nesse hambúrguer!",
                     "price": 35
+                },
+                {
+                    "id": "2",
+                    "imagePath": "dishes/monstro-burguer/monstro_duplo.jpg",
+                    "name": "Monstro Duplo",
+                    "description": "Dois hambúrgueres gigantes e muito queijo.",
+                    "price": 40
+                },
+                {
+                    "id": "3",
+                    "imagePath": "dishes/monstro-burguer/monstro_furioso.jpg",
+                    "name": "Monstro Furioso",
+                    "description": "Para os amantes de pimenta, um hambúrguer infernal!",
+                    "price": 38
+                },
+                {
+                    "id": "4",
+                    "imagePath": "dishes/monstro-burguer/bacon_supremo.jpg",
+                    "name": "Bacon Supremo",
+                    "description": "Muito bacon, cheddar e carne suculenta.",
+                    "price": 42
+                },
+                {
+                    "id": "5",
+                    "imagePath": "dishes/monstro-burguer/cheddar_explosivo.jpg",
+                    "name": "Cheddar Explosivo",
+                    "description": "Uma explosão de cheddar cremoso!",
+                    "price": 37
+                }
+            ]
+        },
+        {
+            "id": "cabron-1234",
+            "imagePath": "restaurants/cabron-mexicano.jpg",
+            "name": "Cabrón Mexicano",
+            "description": "Autêntica comida mexicana, cheia de sabor e tradição.",
+            "stars": 4.7,
+            "distance": 3,
+            "categories": [
+                "Principais",
+                "Petiscos"
+            ],
+            "dishes": [
+                {
+                    "id": "6",
+                    "imagePath": "dishes/cabron-mexicano/taco_supremo.jpg",
+                    "name": "Taco Supremo",
+                    "description": "Taco crocante recheado com carne temperada, alface, queijo e molho especial.",
+                    "price": 25
+                },
+                {
+                    "id": "7",
+                    "imagePath": "dishes/cabron-mexicano/burrito_explosivo.jpg",
+                    "name": "Burrito Explosivo",
+                    "description": "Burrito recheado com carne, feijão, queijo e muito molho picante.",
+                    "price": 30
+                },
+                {
+                    "id": "8",
+                    "imagePath": "dishes/cabron-mexicano/quesadilla_cheddar.jpg",
+                    "name": "Quesadilla de Cheddar",
+                    "description": "Massa de tortilla recheada com cheddar derretido.",
+                    "price": 22
+                },
+                {
+                    "id": "9",
+                    "imagePath": "dishes/cabron-mexicano/enchilada_picante.jpg",
+                    "name": "Enchilada Picante",
+                    "description": "Enchilada recheada com frango e molho de pimenta.",
+                    "price": 28
+                },
+                {
+                    "id": "10",
+                    "imagePath": "dishes/cabron-mexicano/guacamole_supremo.jpg",
+                    "name": "Guacamole Supremo",
+                    "description": "Porção de guacamole cremoso com nachos crocantes.",
+                    "price": 18
+                }
+            ]
+        },
+        {
+            "id": "foodcourt-0001",
+            "imagePath": "restaurants/foodcourt-natural.jpg",
+            "name": "Foodcourt Natural",
+            "description": "Alimentação saudável e saborosa.",
+            "stars": 5.0,
+            "distance": 1,
+            "categories": [
+                "Principais"
+            ],
+            "dishes": [
+                {
+                    "id": "11",
+                    "imagePath": "dishes/foodcourt-natural/salada_verde.jpg",
+                    "name": "Salada Verde",
+                    "description": "Mix de folhas frescas com molho especial.",
+                    "price": 22
+                },
+                {
+                    "id": "12",
+                    "imagePath": "dishes/foodcourt-natural/wrap_natural.jpg",
+                    "name": "Wrap Natural",
+                    "description": "Wrap recheado com frango grelhado e vegetais.",
+                    "price": 24
+                },
+                {
+                    "id": "13",
+                    "imagePath": "dishes/foodcourt-natural/suco_detox.jpg",
+                    "name": "Suco Detox",
+                    "description": "Bebida natural com ingredientes selecionados.",
+                    "price": 12
+                },
+                {
+                    "id": "14",
+                    "imagePath": "dishes/foodcourt-natural/granola_fit.jpg",
+                    "name": "Granola Fit",
+                    "description": "Tigela de granola com frutas frescas.",
+                    "price": 18
+                },
+                {
+                    "id": "15",
+                    "imagePath": "dishes/foodcourt-natural/crepe_integral.jpg",
+                    "name": "Crepe Integral",
+                    "description": "Crepe recheado com queijo branco e tomate.",
+                    "price": 20
+                }
+            ]
+        },
+        {
+            "id": "donutz-0002",
+            "imagePath": "restaurants/donutz.jpg",
+            "name": "Donutz",
+            "description": "Os melhores donuts da cidade!",
+            "stars": 4.8,
+            "distance": 4,
+            "categories": [
+                "Sobremesa"
+            ],
+            "dishes": [
+                {
+                    "id": "16",
+                    "imagePath": "dishes/donutz/donut_tradicional.jpg",
+                    "name": "Donut Tradicional",
+                    "description": "Clássico donut coberto com chocolate.",
+                    "price": 10
+                },
+                {
+                    "id": "17",
+                    "imagePath": "dishes/donutz/donut_recheado.jpg",
+                    "name": "Donut Recheado",
+                    "description": "Donut macio com recheio de creme.",
+                    "price": 12
+                },
+                {
+                    "id": "18",
+                    "imagePath": "dishes/donutz/donut_red_velvet.jpg",
+                    "name": "Donut Red Velvet",
+                    "description": "Donut sabor red velvet com cobertura de cream cheese.",
+                    "price": 15
+                },
+                {
+                    "id": "19",
+                    "imagePath": "dishes/donutz/donut_oreo.jpg",
+                    "name": "Donut Oreo",
+                    "description": "Coberto com pedaços crocantes de Oreo.",
+                    "price": 14
+                },
+                {
+                    "id": "20",
+                    "imagePath": "dishes/donutz/donut_doce_de_leite.jpg",
+                    "name": "Donut Doce de Leite",
+                    "description": "Donut recheado com doce de leite cremoso.",
+                    "price": 13
+                }
+            ]
+        },
+        {
+            "id": "panda-sushi-0003",
+            "imagePath": "restaurants/panda-sushi.jpg",
+            "name": "Panda Sushi",
+            "description": "Sushis e pratos orientais fresquinhos.",
+            "stars": 4.9,
+            "distance": 1,
+            "categories": [
+                "Principais"
+            ],
+            "dishes": [
+                {
+                    "id": "21",
+                    "imagePath": "dishes/panda-sushi/combo_sushi.jpg",
+                    "name": "Combo Sushi",
+                    "description": "Seleção especial de sushis e sashimis.",
+                    "price": 55
+                },
+                {
+                    "id": "22",
+                    "imagePath": "dishes/panda-sushi/yakissoba_tradicional.jpg",
+                    "name": "Yakissoba Tradicional",
+                    "description": "Massa oriental com legumes e carne.",
+                    "price": 38
+                },
+                {
+                    "id": "23",
+                    "imagePath": "dishes/panda-sushi/temaki_salmao.jpg",
+                    "name": "Temaki de Salmão",
+                    "description": "Cone de alga recheado com salmão e cream cheese.",
+                    "price": 25
+                },
+                {
+                    "id": "24",
+                    "imagePath": "dishes/panda-sushi/hot_roll.jpg",
+                    "name": "Hot Roll",
+                    "description": "Sushi empanado crocante e saboroso.",
+                    "price": 30
+                },
+                {
+                    "id": "25",
+                    "imagePath": "dishes/panda-sushi/gyoza.jpg",
+                    "name": "Gyoza",
+                    "description": "Pastéis japoneses recheados com carne de porco.",
+                    "price": 22
                 }
             ]
         }
