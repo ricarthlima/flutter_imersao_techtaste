@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_imersao_techtaste/data/categories_data.dart';
 import 'package:flutter_imersao_techtaste/models/category.dart';
+import 'package:flutter_imersao_techtaste/ui/_core/app_colors.dart';
 import 'package:flutter_imersao_techtaste/ui/home/widgets/category_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -37,7 +38,13 @@ class HomeScreen extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                     ),
               ),
-              TextFormField(),
+              TextFormField(
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.search),
+                  labelText: "O que você quer comer?",
+                  labelStyle: TextStyle(color: AppColors.mainLightColor),
+                ),
+              ),
               Text(
                 "Escolha por categoria",
                 style: Theme.of(context).textTheme.titleMedium,

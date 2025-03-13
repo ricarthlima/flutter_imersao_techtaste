@@ -19,6 +19,28 @@ abstract class AppTheme {
         color: AppColors.mainLightColor,
       ),
     ),
+    inputDecorationTheme: _inputDecorationTheme,
+  );
+
+  static final InputDecorationTheme _inputDecorationTheme =
+      InputDecorationTheme(
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(8.0),
+      borderSide: BorderSide(
+        width: 1,
+        color: Colors.white,
+      ),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(8.0),
+      borderSide: BorderSide(
+        width: 1,
+        color: AppColors.mainLightColor,
+      ),
+    ),
+    focusColor: AppColors.mainLightColor,
+    filled: true,
+    fillColor: Colors.grey[900],
   );
 
   static final AppBarTheme _appBarTheme = AppBarTheme(
