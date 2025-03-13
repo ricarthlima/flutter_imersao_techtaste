@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_imersao_techtaste/models/dish.dart';
 import 'package:flutter_imersao_techtaste/models/restaurant.dart';
+import 'package:flutter_imersao_techtaste/ui/restaurant/widgets/dish_widget.dart';
 
 class RestaurantScreen extends StatelessWidget {
   final Restaurant restaurant;
@@ -18,7 +20,7 @@ class RestaurantScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             spacing: 32,
             children: [
-              SizedBox(height: 32),
+              SizedBox(height: 16),
               Center(
                 child: Image.asset(
                   "assets/${restaurant.imagePath}",
@@ -27,8 +29,19 @@ class RestaurantScreen extends StatelessWidget {
               ),
               Text(
                 "Mais pedidos",
-                style: Theme.of(context).textTheme.titleSmall,
+                style: Theme.of(context).textTheme.titleMedium,
               ),
+              Column(
+                spacing: 32,
+                children: List.generate(
+                  restaurant.listDishes.length,
+                  (index) {
+                    Dish dish = restaurant.listDishes[index];
+                    return DishWidget(dish: dish);
+                  },
+                ),
+              ),
+              SizedBox(height: 64),
             ],
           ),
         ),

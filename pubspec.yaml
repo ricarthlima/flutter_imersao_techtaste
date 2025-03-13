@@ -23,4 +23,5 @@ flutter:
     - assets/banners/
     - assets/categories/
     - assets/restaurants/
+    - assets/dishes/
     - assets/others/
