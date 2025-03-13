@@ -2,7 +2,7 @@
     "restaurants": [
         {
             "id": "06ad1df6-ddbc-47d7-92f5-bd51ab481a51",
-            "imagePath": "restaurants/monstro-burguer.jpg",
+            "imagePath": "restaurants/monstro-burguer.png",
             "name": "Monstro Burguer",
             "description": "Hambúrgueres para quem curte a madrugada.",
             "stars": 4.3,
@@ -51,7 +51,7 @@
         },
         {
             "id": "cabron-1234",
-            "imagePath": "restaurants/cabron-mexicano.jpg",
+            "imagePath": "restaurants/cabron-mexicano.png",
             "name": "Cabrón Mexicano",
             "description": "Autêntica comida mexicana, cheia de sabor e tradição.",
             "stars": 4.7,
@@ -100,7 +100,7 @@
         },
         {
             "id": "foodcourt-0001",
-            "imagePath": "restaurants/foodcourt-natural.jpg",
+            "imagePath": "restaurants/foodcourt-natural.png",
             "name": "Foodcourt Natural",
             "description": "Alimentação saudável e saborosa.",
             "stars": 5.0,
@@ -148,7 +148,7 @@
         },
         {
             "id": "donutz-0002",
-            "imagePath": "restaurants/donutz.jpg",
+            "imagePath": "restaurants/donutz.png",
             "name": "Donutz",
             "description": "Os melhores donuts da cidade!",
             "stars": 4.8,
@@ -196,7 +196,7 @@
         },
         {
             "id": "panda-sushi-0003",
-            "imagePath": "restaurants/panda-sushi.jpg",
+            "imagePath": "restaurants/panda-sushi.png",
             "name": "Panda Sushi",
             "description": "Sushis e pratos orientais fresquinhos.",
             "stars": 4.9,
