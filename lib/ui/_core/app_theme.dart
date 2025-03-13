@@ -45,6 +45,7 @@ abstract class AppTheme {
 
   static final AppBarTheme _appBarTheme = AppBarTheme(
     color: AppColors.backgroundColor,
+    centerTitle: true,
   );
 
   static final ElevatedButtonThemeData _elevatedButtonThemeData =
