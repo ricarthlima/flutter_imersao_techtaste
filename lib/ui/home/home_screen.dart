@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_imersao_techtaste/data/categories_data.dart';
+import 'package:flutter_imersao_techtaste/data/restaurants_data.dart';
 import 'package:flutter_imersao_techtaste/models/category.dart';
+import 'package:flutter_imersao_techtaste/models/restaurant.dart';
 import 'package:flutter_imersao_techtaste/ui/_core/app_colors.dart';
 import 'package:flutter_imersao_techtaste/ui/home/widgets/category_widget.dart';
+import 'package:flutter_imersao_techtaste/ui/home/widgets/restaurant_widget.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    RestaurantsData restaurantsData = Provider.of<RestaurantsData>(context);
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -70,6 +75,16 @@ class HomeScreen extends StatelessWidget {
                 "Bem avaliados",
                 style: Theme.of(context).textTheme.titleMedium,
               ),
+              Column(
+                children: List.generate(
+                  restaurantsData.listRestaurant.length,
+                  (index) {
+                    Restaurant restaurant =
+                        restaurantsData.listRestaurant[index];
+                    return RestaurantWidget(restaurant: restaurant);
+                  },
+                ),
+              )
             ],
           ),
         ),

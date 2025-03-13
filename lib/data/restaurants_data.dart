@@ -1,11 +1,14 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_imersao_techtaste/models/restaurant.dart';
 
-class RestaurantsData {
-  Future<List<Restaurant>> getRestaurants() async {
-    List<Restaurant> listRestaurant = [];
+class RestaurantsData extends ChangeNotifier {
+  List<Restaurant> listRestaurant = [];
+
+  Future<void> getRestaurants() async {
+    listRestaurant = [];
 
     String jsonString = await rootBundle.loadString('assets/data.json');
     Map<String, dynamic> jsonData = json.decode(jsonString);
@@ -15,6 +18,6 @@ class RestaurantsData {
       listRestaurant.add(Restaurant.fromMap(restaurantData));
     }
 
-    return listRestaurant;
+    notifyListeners();
   }
 }
