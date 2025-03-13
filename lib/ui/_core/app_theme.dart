@@ -12,6 +12,11 @@ abstract class AppTheme {
         fontWeight: FontWeight.w400,
         fontSize: 22,
       ),
+      titleSmall: TextStyle(
+        fontWeight: FontWeight.w400,
+        fontSize: 16,
+        color: AppColors.mainLightColor,
+      ),
     ),
   );
 
