@@ -6,12 +6,17 @@ abstract class AppTheme {
   static ThemeData appTheme = ThemeData.dark().copyWith(
     scaffoldBackgroundColor: AppColors.backgroundColor,
     elevatedButtonTheme: _elevatedButtonThemeData,
+    appBarTheme: _appBarTheme,
     textTheme: TextTheme(
       titleMedium: TextStyle(
         fontWeight: FontWeight.w400,
         fontSize: 22,
       ),
     ),
+  );
+
+  static final AppBarTheme _appBarTheme = AppBarTheme(
+    color: AppColors.backgroundColor,
   );
 
   static final ElevatedButtonThemeData _elevatedButtonThemeData =
