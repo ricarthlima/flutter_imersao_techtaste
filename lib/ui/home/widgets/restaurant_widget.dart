@@ -7,6 +7,39 @@ class RestaurantWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(restaurant.name);
+    return Row(
+      spacing: 16,
+      children: [
+        Image.asset(
+          "assets/${restaurant.imagePath}",
+          width: 96,
+        ),
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              restaurant.name,
+              style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
+            ),
+            Row(
+              children: List.generate(
+                restaurant.stars.floor(),
+                (index) {
+                  return Image.asset(
+                    "assets/others/star.png",
+                    width: 16,
+                  );
+                },
+              ),
+            ),
+            Text("${restaurant.distance}km"),
+          ],
+        )
+      ],
+    );
   }
 }

@@ -76,6 +76,7 @@ class HomeScreen extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               Column(
+                spacing: 16,
                 children: List.generate(
                   restaurantsData.listRestaurant.length,
                   (index) {
@@ -84,7 +85,8 @@ class HomeScreen extends StatelessWidget {
                     return RestaurantWidget(restaurant: restaurant);
                   },
                 ),
-              )
+              ),
+              SizedBox(height: 64),
             ],
           ),
         ),
