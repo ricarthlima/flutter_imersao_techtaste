@@ -31,9 +31,17 @@ class HomeScreen extends StatelessWidget {
                   width: 147,
                 ),
               ),
-              Text("Boas vindas!"),
+              Text(
+                "Boas vindas!",
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                      fontWeight: FontWeight.w700,
+                    ),
+              ),
               TextFormField(),
-              Text("Escolha por categoria"),
+              Text(
+                "Escolha por categoria",
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -48,8 +56,13 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Image.asset("assets/banners/banner_promo.png"),
-              Text("Bem avaliados"),
+              Image.asset(
+                "assets/banners/banner_promo.png",
+              ),
+              Text(
+                "Bem avaliados",
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
             ],
           ),
         ),

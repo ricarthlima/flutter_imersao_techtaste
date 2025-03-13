@@ -11,6 +11,7 @@ abstract class AppTheme {
       titleMedium: TextStyle(
         fontWeight: FontWeight.w400,
         fontSize: 22,
+        color: AppColors.mainLightColor,
       ),
       titleSmall: TextStyle(
         fontWeight: FontWeight.w400,

@@ -38,7 +38,10 @@ class SplashScreen extends StatelessWidget {
                       children: [
                         Text(
                           "Um parceiro inovador para sua",
-                          style: Theme.of(context).textTheme.titleMedium,
+                          style:
+                              Theme.of(context).textTheme.titleMedium!.copyWith(
+                                    color: Colors.white,
+                                  ),
                         ),
                         Text(
                           "melhor experiência culinária!",
