@@ -6,7 +6,7 @@ class Restaurant {
   String name;
   String description;
   double stars;
-  double distance;
+  int distance;
   List<String> categories;
 
   Restaurant({
@@ -38,7 +38,7 @@ class Restaurant {
       name: map['name'] as String,
       description: map['description'] as String,
       stars: map['stars'] as double,
-      distance: map['distance'] as double,
+      distance: map['distance'] as int,
       categories: List<String>.from((map['categories'] as List<dynamic>)),
     );
   }
@@ -48,4 +48,9 @@ class Restaurant {
   factory Restaurant.fromJson(String source) => Restaurant.fromMap(
         json.decode(source) as Map<String, dynamic>,
       );
+
+  @override
+  String toString() {
+    return 'Restaurant(id: $id, imagePath: $imagePath, name: $name, description: $description, stars: $stars, distance: $distance, categories: $categories)';
+  }
 }
