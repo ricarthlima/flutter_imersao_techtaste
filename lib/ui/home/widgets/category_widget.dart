@@ -4,7 +4,12 @@ import 'package:flutter_imersao_techtaste/ui/_core/app_colors.dart';
 
 class CategoryWidget extends StatelessWidget {
   final CategoryModel category;
-  const CategoryWidget({super.key, required this.category});
+  final bool isSelected;
+  const CategoryWidget({
+    super.key,
+    required this.category,
+    required this.isSelected,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +18,8 @@ class CategoryWidget extends StatelessWidget {
       height: 100,
       padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
-        color: AppColors.backgroundLightColor,
+        color:
+            (isSelected) ? AppColors.mainColor : AppColors.backgroundLightColor,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Column(

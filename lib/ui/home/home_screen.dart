@@ -9,8 +9,15 @@ import 'package:flutter_imersao_techtaste/ui/home/widgets/category_widget.dart';
 import 'package:flutter_imersao_techtaste/ui/home/widgets/restaurant_widget.dart';
 import 'package:provider/provider.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  String? selectedCategory;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +64,15 @@ class HomeScreen extends StatelessWidget {
                     (index) {
                       CategoryModel category =
                           CategoriesData.listCategories[index];
-                      return CategoryWidget(category: category);
+                      return InkWell(
+                        onTap: () {
+                          onCategoryTap(category.name);
+                        },
+                        child: CategoryWidget(
+                          category: category,
+                          isSelected: selectedCategory == category.name,
+                        ),
+                      );
                     },
                   ),
                 ),
@@ -86,5 +101,17 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  onCategoryTap(String categoryName) {
+    if (selectedCategory != categoryName) {
+      setState(() {
+        selectedCategory = categoryName;
+      });
+    } else {
+      setState(() {
+        selectedCategory = null;
+      });
+    }
   }
 }
