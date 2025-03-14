@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter_imersao_techtaste/ui/_core/bag_provider.dart';
+import 'package:flutter_imersao_techtaste/ui/checkout/checkout_screen.dart';
 import 'package:provider/provider.dart';
 
 AppBar getAppBar({
@@ -28,7 +29,13 @@ AppBar getAppBar({
           style: TextStyle(fontSize: 10),
         ),
         child: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context) {
+                return CheckoutScreen();
+              },
+            ));
+          },
           icon: Icon(Icons.shopping_basket),
         ),
       ),
