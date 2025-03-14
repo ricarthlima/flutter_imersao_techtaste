@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_imersao_techtaste/models/dish.dart';
 import 'package:flutter_imersao_techtaste/models/restaurant.dart';
+import 'package:flutter_imersao_techtaste/ui/_core/widgets/appbar.dart';
 import 'package:flutter_imersao_techtaste/ui/restaurant/widgets/dish_widget.dart';
 
 class RestaurantScreen extends StatelessWidget {
@@ -10,9 +11,7 @@ class RestaurantScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(restaurant.name),
-      ),
+      appBar: getAppBar(context: context, title: restaurant.name),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: SingleChildScrollView(

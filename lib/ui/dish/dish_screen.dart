@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_imersao_techtaste/ui/_core/app_theme.dart';
 import 'package:flutter_imersao_techtaste/ui/_core/bag_provider.dart';
 import 'package:flutter_imersao_techtaste/ui/_core/dimensions.dart';
+import 'package:flutter_imersao_techtaste/ui/_core/widgets/appbar.dart';
 import 'package:provider/provider.dart';
 
 import '../../models/dish.dart';
@@ -27,7 +28,7 @@ class _DishScreenState extends State<DishScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.restaurantName)),
+      appBar: getAppBar(context: context, title: widget.restaurantName),
       body: Padding(
         padding: const EdgeInsets.all(24),
         child: SingleChildScrollView(
@@ -117,7 +118,7 @@ class _DishScreenState extends State<DishScreen> {
     for (int i = 0; i < amount; i++) {
       dishesToAdd.add(widget.dish);
     }
-    context.read<BagProvider>().listDishesOnBag.addAll(dishesToAdd);
+    context.read<BagProvider>().addAllDishes(dishesToAdd);
     print(context.read<BagProvider>().listDishesOnBag.length);
   }
 }
