@@ -122,7 +122,7 @@ class CheckoutScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Pedido:"),
+                        Text("Total:"),
                         Text(
                           "R\$ ${(getTotalPrice(bagProvider.listDishesOnBag) + 6).toStringAsFixed(2)}",
                         ),
