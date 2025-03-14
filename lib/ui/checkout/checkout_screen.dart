@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_imersao_techtaste/ui/_core/bag_provider.dart';
+import 'package:flutter_imersao_techtaste/ui/checkout/widgets/checkout_widget.dart';
 import 'package:provider/provider.dart';
 
 import '../../models/dish.dart';
@@ -40,9 +41,25 @@ class CheckoutScreen extends StatelessWidget {
                 "Pagamentos",
                 style: Theme.of(context).textTheme.titleSmall,
               ),
+              CheckoutWidget(
+                onTap: () {},
+                leading: Image.asset(
+                  "assets/others/visa.png",
+                  width: 30,
+                ),
+                child: Text("VISA Classic\n****-0976"),
+              ),
               Text(
                 "Entregar no endereço:",
                 style: Theme.of(context).textTheme.titleSmall,
+              ),
+              CheckoutWidget(
+                onTap: () {},
+                leading: Icon(
+                  Icons.location_on,
+                  size: 30,
+                ),
+                child: Text("Rua das Acácias, 28\nCasa 10"),
               ),
               Text(
                 "Confirmar",
