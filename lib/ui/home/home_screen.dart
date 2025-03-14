@@ -9,6 +9,8 @@ import 'package:flutter_imersao_techtaste/ui/home/widgets/category_widget.dart';
 import 'package:flutter_imersao_techtaste/ui/home/widgets/restaurant_widget.dart';
 import 'package:provider/provider.dart';
 
+import '../../models/dish.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -20,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   String? selectedCategory;
   List<Restaurant>? listExhibitionRestaurants;
   final ScrollController _scrollController = ScrollController();
+  final TextEditingController _searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -48,11 +51,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
               ),
               TextFormField(
+                controller: _searchController,
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.search),
                   labelText: "O que você quer comer?",
                   labelStyle: TextStyle(color: AppColors.mainLightColor),
                 ),
+                onChanged: (value) => refreshExhibition(),
+                onFieldSubmitted: (value) => _animateToEnd(),
               ),
               Text(
                 "Escolha por categoria",
@@ -133,23 +139,56 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void refreshExhibition() {
-    if (selectedCategory != null) {
-      List<Restaurant> listOriginal =
-          context.read<RestaurantsData>().listRestaurant;
+    String search = _searchController.text;
+    List<Restaurant> listOriginal =
+        context.read<RestaurantsData>().listRestaurant;
 
+    if (selectedCategory != null) {
       listExhibitionRestaurants = listOriginal
           .where((e) => e.categories.contains(selectedCategory))
           .toList();
 
-      _scrollController.animateTo(
-        _scrollController.position.maxScrollExtent,
-        duration: Duration(milliseconds: 750),
-        curve: Curves.ease,
-      );
+      _animateToEnd();
+    }
 
-      setState(() {});
-    } else {
+    if (search != "") {
+      if (listExhibitionRestaurants == null) {
+        listExhibitionRestaurants = listOriginal
+            .where(
+              (Restaurant restaurant) => restaurant.listDishes
+                  .where(
+                    (Dish dish) =>
+                        dish.name.toLowerCase().contains(search.toLowerCase()),
+                  )
+                  .isNotEmpty,
+            )
+            .toList();
+      } else {
+        listExhibitionRestaurants = listExhibitionRestaurants!
+            .where(
+              (Restaurant restaurant) => restaurant.listDishes
+                  .where(
+                    (Dish dish) =>
+                        dish.name.toLowerCase().contains(search.toLowerCase()),
+                  )
+                  .isNotEmpty,
+            )
+            .toList();
+      }
+    }
+
+    if (selectedCategory == null && search == "") {
       listExhibitionRestaurants = null;
     }
+
+    setState(() {});
+  }
+
+  void _animateToEnd() {
+    _scrollController.animateTo(
+      _scrollController.position.maxScrollExtent,
+      duration: Duration(milliseconds: 750),
+      curve: Curves.ease,
+    );
   }
 }
