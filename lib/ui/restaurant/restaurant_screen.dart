@@ -37,7 +37,10 @@ class RestaurantScreen extends StatelessWidget {
                   restaurant.listDishes.length,
                   (index) {
                     Dish dish = restaurant.listDishes[index];
-                    return DishWidget(dish: dish);
+                    return DishWidget(
+                      dish: dish,
+                      restaurantName: restaurant.name,
+                    );
                   },
                 ),
               ),
