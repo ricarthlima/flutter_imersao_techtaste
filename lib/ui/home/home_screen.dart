@@ -18,6 +18,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   String? selectedCategory;
+  List<Restaurant>? listExhibitionRestaurants;
 
   @override
   Widget build(BuildContext context) {
@@ -84,17 +85,29 @@ class _HomeScreenState extends State<HomeScreen> {
                 "Bem avaliados",
                 style: Theme.of(context).textTheme.titleMedium,
               ),
-              Column(
-                spacing: 16,
-                children: List.generate(
-                  restaurantsData.listRestaurant.length,
-                  (index) {
-                    Restaurant restaurant =
-                        restaurantsData.listRestaurant[index];
-                    return RestaurantWidget(restaurant: restaurant);
-                  },
+              if (listExhibitionRestaurants == null)
+                Column(
+                  spacing: 16,
+                  children: List.generate(
+                    restaurantsData.listRestaurant.length,
+                    (index) {
+                      Restaurant restaurant =
+                          restaurantsData.listRestaurant[index];
+                      return RestaurantWidget(restaurant: restaurant);
+                    },
+                  ),
                 ),
-              ),
+              if (listExhibitionRestaurants != null)
+                Column(
+                  spacing: 16,
+                  children: List.generate(
+                    listExhibitionRestaurants!.length,
+                    (index) {
+                      Restaurant restaurant = listExhibitionRestaurants![index];
+                      return RestaurantWidget(restaurant: restaurant);
+                    },
+                  ),
+                ),
               SizedBox(height: 64),
             ],
           ),
@@ -112,6 +125,23 @@ class _HomeScreenState extends State<HomeScreen> {
       setState(() {
         selectedCategory = null;
       });
+    }
+
+    refreshExhibition();
+  }
+
+  void refreshExhibition() {
+    if (selectedCategory != null) {
+      List<Restaurant> listOriginal =
+          context.read<RestaurantsData>().listRestaurant;
+
+      listExhibitionRestaurants = listOriginal
+          .where((e) => e.categories.contains(selectedCategory))
+          .toList();
+
+      setState(() {});
+    } else {
+      listExhibitionRestaurants = null;
     }
   }
 }
