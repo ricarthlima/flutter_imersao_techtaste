@@ -69,7 +69,7 @@ class CheckoutDishWidget extends StatelessWidget {
                   width: 24,
                   height: 24,
                   child: IconButton.filled(
-                    onPressed: () {},
+                    onPressed: () => onAddPressed.call(),
                     padding: EdgeInsets.zero,
                     icon: Icon(Icons.arrow_drop_up),
                     style: AppTheme.iconButtonStylized,
@@ -80,7 +80,7 @@ class CheckoutDishWidget extends StatelessWidget {
                   width: 24,
                   height: 24,
                   child: IconButton.filled(
-                    onPressed: () {},
+                    onPressed: () => onRemovePressed.call(),
                     padding: EdgeInsets.zero,
                     icon: Center(child: Icon(Icons.arrow_drop_down)),
                     style: AppTheme.iconButtonStylized,

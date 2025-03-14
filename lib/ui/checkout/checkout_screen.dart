@@ -52,8 +52,12 @@ class CheckoutScreen extends StatelessWidget {
                       return CheckoutDishWidget(
                         dish: dish,
                         amount: bagProvider.getMapByAmount()[dish]!,
-                        onAddPressed: () {},
-                        onRemovePressed: () {},
+                        onAddPressed: () {
+                          bagProvider.addAllDishes([dish]);
+                        },
+                        onRemovePressed: () {
+                          bagProvider.removeDish(dish);
+                        },
                       );
                     },
                   ),
