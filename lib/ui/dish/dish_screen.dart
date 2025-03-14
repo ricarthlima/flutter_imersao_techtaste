@@ -2,7 +2,9 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_imersao_techtaste/ui/_core/app_theme.dart';
+import 'package:flutter_imersao_techtaste/ui/_core/bag_provider.dart';
 import 'package:flutter_imersao_techtaste/ui/_core/dimensions.dart';
+import 'package:provider/provider.dart';
 
 import '../../models/dish.dart';
 
@@ -44,11 +46,9 @@ class _DishScreenState extends State<DishScreen> {
                     child: SizedBox(
                       height: 160,
                       width: double.infinity,
-                      child: Expanded(
-                        child: Image.asset(
-                          "assets/dishes/default.png",
-                          fit: BoxFit.cover,
-                        ),
+                      child: Image.asset(
+                        "assets/dishes/default.png",
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
@@ -89,7 +89,7 @@ class _DishScreenState extends State<DishScreen> {
               SizedBox(
                 width: width(context),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => _addToBag(context),
                   child: Text("Adicionar"),
                 ),
               ),
@@ -110,5 +110,14 @@ class _DishScreenState extends State<DishScreen> {
     setState(() {
       amount = max(1, amount - 1);
     });
+  }
+
+  void _addToBag(BuildContext context) {
+    List<Dish> dishesToAdd = [];
+    for (int i = 0; i < amount; i++) {
+      dishesToAdd.add(widget.dish);
+    }
+    context.read<BagProvider>().listDishesOnBag.addAll(dishesToAdd);
+    print(context.read<BagProvider>().listDishesOnBag.length);
   }
 }

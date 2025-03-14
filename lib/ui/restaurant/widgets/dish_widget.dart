@@ -27,11 +27,9 @@ class DishWidget extends StatelessWidget {
             child: SizedBox(
               height: 160,
               width: double.infinity,
-              child: Expanded(
-                child: Image.asset(
-                  "assets/dishes/default.png",
-                  fit: BoxFit.cover,
-                ),
+              child: Image.asset(
+                "assets/dishes/default.png",
+                fit: BoxFit.cover,
               ),
             ),
           ),
