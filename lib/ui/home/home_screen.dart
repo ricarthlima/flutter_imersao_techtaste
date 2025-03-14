@@ -19,6 +19,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   String? selectedCategory;
   List<Restaurant>? listExhibitionRestaurants;
+  final ScrollController _scrollController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: SingleChildScrollView(
+          controller: _scrollController,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             spacing: 32,
@@ -138,6 +140,12 @@ class _HomeScreenState extends State<HomeScreen> {
       listExhibitionRestaurants = listOriginal
           .where((e) => e.categories.contains(selectedCategory))
           .toList();
+
+      _scrollController.animateTo(
+        _scrollController.position.maxScrollExtent,
+        duration: Duration(milliseconds: 750),
+        curve: Curves.ease,
+      );
 
       setState(() {});
     } else {
