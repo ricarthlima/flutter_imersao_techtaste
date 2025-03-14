@@ -19,7 +19,9 @@ class CheckoutScreen extends StatelessWidget {
         title: Text("Sacola"),
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              _onCleanPressed(context);
+            },
             child: Text(
               "Limpar",
               style: TextStyle(color: AppColors.mainColor),
@@ -38,23 +40,31 @@ class CheckoutScreen extends StatelessWidget {
                 "Pedidos",
                 style: Theme.of(context).textTheme.titleSmall,
               ),
-              Column(
-                spacing: 16,
-                children: List.generate(
-                  bagProvider.getMapByAmount().keys.length,
-                  (index) {
-                    Dish dish =
-                        bagProvider.getMapByAmount().keys.toList()[index];
+              if (bagProvider.listDishesOnBag.isNotEmpty)
+                Column(
+                  spacing: 16,
+                  children: List.generate(
+                    bagProvider.getMapByAmount().keys.length,
+                    (index) {
+                      Dish dish =
+                          bagProvider.getMapByAmount().keys.toList()[index];
 
-                    return CheckoutDishWidget(
-                      dish: dish,
-                      amount: bagProvider.getMapByAmount()[dish]!,
-                      onAddPressed: () {},
-                      onRemovePressed: () {},
-                    );
-                  },
+                      return CheckoutDishWidget(
+                        dish: dish,
+                        amount: bagProvider.getMapByAmount()[dish]!,
+                        onAddPressed: () {},
+                        onRemovePressed: () {},
+                      );
+                    },
+                  ),
                 ),
-              ),
+              if (bagProvider.listDishesOnBag.isEmpty)
+                SizedBox(
+                  height: 100,
+                  child: Center(
+                    child: Text("Sacola vazia"),
+                  ),
+                ),
               Text(
                 "Pagamentos",
                 style: Theme.of(context).textTheme.titleSmall,
@@ -145,5 +155,26 @@ class CheckoutScreen extends StatelessWidget {
       total += dish.price;
     }
     return total;
+  }
+
+  void _onCleanPressed(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          "Deseja limpar o carrinho?",
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: Colors.red[900],
+        action: SnackBarAction(
+          label: "Limpar",
+          textColor: Colors.white,
+          onPressed: () {
+            context.read<BagProvider>().cleanDishes();
+          },
+        ),
+      ),
+    );
   }
 }

@@ -27,4 +27,9 @@ class BagProvider extends ChangeNotifier {
 
     return mapResult;
   }
+
+  cleanDishes() {
+    listDishesOnBag.removeWhere((dish) => true);
+    notifyListeners();
+  }
 }
