@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../_core/app_colors.dart';
+import '../../_core/app_theme.dart';
 
 class CheckoutWidget extends StatelessWidget {
   final Function onTap;
@@ -36,9 +37,7 @@ class CheckoutWidget extends StatelessWidget {
             IconButton.filled(
               onPressed: () {},
               icon: Icon(Icons.arrow_forward_ios_rounded),
-              style: ButtonStyle(
-                backgroundColor: WidgetStatePropertyAll(AppColors.mainColor),
-              ),
+              style: AppTheme.iconButtonStylized,
             ),
           ],
         ),

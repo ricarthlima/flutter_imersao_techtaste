@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_imersao_techtaste/ui/_core/bag_provider.dart';
+import 'package:flutter_imersao_techtaste/ui/checkout/widgets/checkout_dish_widget.dart';
 import 'package:flutter_imersao_techtaste/ui/checkout/widgets/checkout_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -36,6 +37,23 @@ class CheckoutScreen extends StatelessWidget {
               Text(
                 "Pedidos",
                 style: Theme.of(context).textTheme.titleSmall,
+              ),
+              Column(
+                spacing: 16,
+                children: List.generate(
+                  bagProvider.getMapByAmount().keys.length,
+                  (index) {
+                    Dish dish =
+                        bagProvider.getMapByAmount().keys.toList()[index];
+
+                    return CheckoutDishWidget(
+                      dish: dish,
+                      amount: bagProvider.getMapByAmount()[dish]!,
+                      onAddPressed: () {},
+                      onRemovePressed: () {},
+                    );
+                  },
+                ),
               ),
               Text(
                 "Pagamentos",

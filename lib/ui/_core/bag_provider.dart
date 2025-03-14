@@ -13,4 +13,18 @@ class BagProvider extends ChangeNotifier {
     listDishesOnBag.remove(dish);
     notifyListeners();
   }
+
+  Map<Dish, int> getMapByAmount() {
+    Map<Dish, int> mapResult = {};
+
+    for (Dish dish in listDishesOnBag) {
+      if (mapResult[dish] == null) {
+        mapResult[dish] = 1;
+      } else {
+        mapResult[dish] = mapResult[dish]! + 1;
+      }
+    }
+
+    return mapResult;
+  }
 }
