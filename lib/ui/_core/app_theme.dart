@@ -20,7 +20,6 @@ abstract class AppTheme {
       ),
     ),
     inputDecorationTheme: _inputDecorationTheme,
-    iconButtonTheme: _iconButtonThemeData,
   );
 
   static final InputDecorationTheme _inputDecorationTheme =
@@ -66,19 +65,17 @@ abstract class AppTheme {
     ),
   );
 
-  static final IconButtonThemeData _iconButtonThemeData = IconButtonThemeData(
-    style: ButtonStyle(
-      backgroundColor: WidgetStateColor.resolveWith(
-        (Set<WidgetState> states) {
-          if (states.contains(WidgetState.pressed)) {
-            return AppColors.mainColor.withAlpha(200);
-          } else if (states.contains(WidgetState.disabled)) {
-            return AppColors.mainColor.withAlpha(125);
-          }
-          return AppColors.mainColor;
-        },
-      ),
-      foregroundColor: WidgetStatePropertyAll(Colors.black),
+  static ButtonStyle iconButtonStylized = ButtonStyle(
+    backgroundColor: WidgetStateColor.resolveWith(
+      (Set<WidgetState> states) {
+        if (states.contains(WidgetState.pressed)) {
+          return AppColors.mainColor.withAlpha(200);
+        } else if (states.contains(WidgetState.disabled)) {
+          return AppColors.mainColor.withAlpha(125);
+        }
+        return AppColors.mainColor;
+      },
     ),
+    foregroundColor: WidgetStatePropertyAll(Colors.black),
   );
 }
